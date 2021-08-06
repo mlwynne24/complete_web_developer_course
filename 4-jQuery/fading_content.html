@@ -1,0 +1,141 @@
+<html>
+
+  <head>
+
+    <title>Fading content</title>
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+
+      #circle {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: green;
+        margin: 10px;
+
+
+      }
+    
+      .square {
+
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="circle"></div>
+
+    <div class="square"></div>
+
+    <div class="square"></div>
+
+    <p>Use jquery website to look at how can adapt jquery functions e.g. fade out more slowly.</p>
+
+    <p id="challengePara">This is the challenge paragraph. Click button!</p>
+
+    <button id="button">Fade out!</button>
+
+    <button id="buttonTwo">Fade in!</button>
+
+    <p id="toggleText">This text will be toggled in and out.</p>
+
+    <button id="toggleButton">Toggle text</button>
+
+
+    <script type="text/javascript">
+
+      $("#button").click(function() { //challenge 1
+
+        $("#challengePara").fadeOut("slow");
+
+      })
+      
+      $("#buttonTwo").click(function() {
+
+        $("#challengePara").fadeIn("slow");
+
+      })
+
+      var toggleClicks = 1
+      
+      $("#toggleButton").click(function() { //toggle visibility of text.
+
+        toggleClicks = toggleClicks + 1;
+
+        if (toggleClicks % 2 == 0) {
+
+          $("#toggleText").fadeOut("slow");
+
+        } else {
+
+          $("#toggleText").fadeIn("slow");
+
+        }
+
+      })
+
+      /* Another way:
+
+      if ($("#toggleText").css("display") == "none") {
+
+        $("#toggleText").fadeIn("slow");
+
+      } else {
+
+        $("#toggleText").fadeOut("slow")
+
+      } */
+
+      //OR
+
+      /* var textShowing = true;
+
+      $("#toggleButton").click(function() {
+
+        if (textShowing) {
+
+          $("#toggleText").fadeOut(function() {
+
+            textShowing = false;
+
+          })
+
+        } else {
+
+          $"#toggleText".fadeOut(function() {
+
+            textShowing = true;
+
+          });
+
+        }
+
+      }) */
+
+      $("div").click(function() {
+
+        $(this).fadeOut("slow", function() { //add function to second half off parentheses to add function to do when done. Called a CALLBACK FUNCTION.
+
+          alert("fade completed");
+
+      }); // fadeout
+      })
+
+      
+
+    </script>
+
+  </body>
+
+</html>

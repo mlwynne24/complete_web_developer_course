@@ -1,0 +1,66 @@
+<html>
+
+  <head>
+
+    <title>padding</title>
+
+    <style type="text/css">
+    
+      #first-section {
+
+        color: white;
+        background-color: green;
+        width: 200px;
+        z-index: 1;
+
+      }
+
+      #second-section {
+
+        background-color: pink;
+        width: 200px;
+        padding:5px 10px 20px 10px;
+
+      }
+
+      body {
+
+        margin:0;
+        padding:0;
+
+      }
+
+      p {
+
+        margin:0;
+        padding:0;
+
+      }
+
+    </style>
+    
+  </head>
+    
+  <body>
+
+    <div id="first-section">
+
+      <p>Padding works inside object.</p>
+
+      <p>Works in same way as margin in terms of  padding:5px 10px 20px 10px.</p>
+
+    </div>
+
+    <div id="second-section">
+
+      <p>Use padding and margin:0 on div,p,body etc as above removes defaults.</p>
+
+      <h3>Investigate CSS reset, especially if running across different browsers.</h3>
+
+    </div>
+
+    <p>z-index - higher z-index goes in front</p>
+
+  </body>
+
+</html>

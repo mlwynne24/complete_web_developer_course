@@ -1,0 +1,59 @@
+<html>
+
+  <head>
+
+    <title>Changing Website Content</title>
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+
+      #greenCircle {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: green;
+        margin: 10px;
+
+
+      }
+    
+    
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="greenCircle"></div>
+
+    <p>This is some text.</p>
+
+    <iframe src="http://corndog.io/" height="50%" width="100%"></iframe>
+
+    <script type="text/javascript">
+
+      $("#greenCircle").click(function() { //on click of circle
+
+        $("p").html("This text has changed!"); //change text
+
+        alert($("p").html()); //alert the element
+
+      })
+
+      $("#greenCircle").hover(function() { //on hover over
+
+        $("iframe").attr("src", "https://thatsthefinger.com/");
+
+      })
+
+
+
+
+    </script>
+
+  </body>
+
+</html>

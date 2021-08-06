@@ -1,0 +1,71 @@
+<html>
+
+  <head>
+
+    <title>AJAX</title>
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+
+      #circle {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: green;
+        margin: 10px;
+
+
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="circle"></div>
+    
+    <p></p>
+
+      
+
+    <script type="text/javascript">
+
+      $.get("info.txt", function(data) {
+          
+        alert(data);
+          
+      }) //just gets data and alerts
+      
+      
+      $.ajax("info.txt").done(function(data) {
+          
+        alert(data);
+          
+      }).fail(function() { //for if can't get the data for some reason.
+          
+        alert("could not get data");
+          
+        })
+        
+        
+        
+        $.ajax("info.txt").done(function(data) {
+            
+            $("p").html(data);
+            
+        }).fail(function() {
+            
+            alert("could not get data");
+            
+        })
+
+
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,234 @@
+<html>
+
+  <head>
+
+    <title>Code Player</title>
+
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+
+    <style type="text/css">
+    
+      html {
+
+        overflow: hidden;
+
+      }
+    
+    
+      #header {
+
+        background-color: #EDEDED;
+        height: 40px;
+        width: 100%;
+        border-bottom: 1px solid #BFBFBF;
+
+
+      }
+
+      body {
+
+        margin: 0;
+        padding: 0;
+
+      }
+
+      #logo {
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 150%;
+        padding: 6px 10px;
+        float: left;
+
+      }
+
+      #buttonsContainer {
+
+        position: relative;
+        height: 30px;
+        width: 280px;
+        margin: 0 auto;
+        background-color: #EDEDED;
+        top: 3.5px;
+        border-radius: 5px;
+
+
+      }
+
+      button {
+
+        margin: 0px;
+        padding: 6.5px 8px;
+        float: left;
+        font-size: 15px;
+        border-radius: 0;
+        border: 1px solid #BFBFBF
+
+      }
+
+      .buttonLeft {
+
+        border-right: 0;
+
+      }
+
+      #html {
+
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+      }
+
+      #output {
+
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+      }
+
+      .panel {
+
+        float: left;
+        height: 700px;
+        width: 24.2vw;
+        border: 1px solid #BFBFBF;
+        position: relative;
+        top: 1.5px;
+
+
+      }
+
+      .clearFloats {
+
+        clear: both;
+
+      }
+
+      #mainDiv {
+
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+
+      }
+
+      .highlightedButton {
+
+        background-color: #808080;
+
+      }
+
+      .active {
+
+        background-color: #E8F2FF;
+
+      }
+
+      .hidden {
+
+        display: none;
+      }
+
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <div id="header">
+
+      <div id="logo">CodePlayer</div>
+
+      <div id="buttonsContainer">
+
+        <button class="topButton buttonLeft active" id="html">HTML</button>
+
+        <button class="topButton buttonLeft" id="css">CSS</button>
+
+        <button class="topButton buttonLeft" id="javascript">JavaScript</button>
+
+        <button class="topButton active" id="output">Output</button>
+
+      </div>
+
+      <div class="clearFloats"></div>
+
+      <div id="mainDiv">
+
+        <textarea id="htmlPanel" class="panel"></textarea>
+
+        <textarea id="cssPanel" class="panel hidden" >
+        </textarea>
+
+        <textarea id="javascriptPanel" class="panel hidden" ></textarea>
+
+        <iframe id="outputPanel" class="panel">
+
+
+        </iframe>
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+      function updateOutput() {
+
+        $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+
+        document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
+
+      }
+
+      $(".topButton").hover(function() {
+
+        $(this).addClass("highlightedButton");
+
+      }, function() {
+
+        $(this).removeClass("highlightedButton");
+
+      })
+
+      $(".topButton").click(function() {
+
+        $(this).toggleClass("active");
+
+        $(this).removeClass("highlightedButton");
+
+        var panelId = $(this).attr("id") + "Panel";
+
+        $('#' + panelId).toggleClass("hidden");
+
+        var numberActivePanels = 4 - $(".hidden").length;
+
+        $(".panel").width(($(window).width() / numberActivePanels) - 5)
+
+      })
+
+      $(".panel").width(($(window).width() / 2) - 5);
+
+      $(".panel").height($(window).height() - $("#header").height() - 210);
+
+      updateOutput();
+
+      $(".panel").on("change keyup paste", function() {
+
+        updateOutput();
+
+      })
+
+    </script>
+
+  </body>
+
+</html>

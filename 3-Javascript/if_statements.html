@@ -1,0 +1,47 @@
+<html>
+
+  <head>
+
+    <title>if statements</title>
+    
+  </head>
+
+  <body>
+
+    <p>Please enter password here:</p>
+    
+    <input type="text" id="enteredText">
+
+    <button id="button">login</button>
+
+    <p id="entryText"></p>
+    
+    <script type="text/javascript">
+
+      document.getElementById("button").onclick = function() {
+
+        var enteredText = "";
+
+        enteredText = document.getElementById("enteredText").value;
+
+        if (enteredText == "therightpassword") {
+
+          document.getElementById("entryText").innerHTML = "You're in!";
+          document.getElementById("entryText").style.color = "green";
+
+        } else {
+
+          document.getElementById("entryText").innerHTML = "Wrong Password. Try again!";
+          document.getElementById("entryText").style.color = "red";
+
+        }
+
+      }
+      
+
+
+    </script>
+
+  </body>
+
+</html>

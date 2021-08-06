@@ -1,0 +1,41 @@
+<head>
+
+  <title>Loops</title>
+  
+</head>
+
+<body>
+
+  <div id="tweetDiv"></div>
+  
+  <script type="text/javascript">
+
+    var tweets = ["Hi everyone","hello","what you saying","just did a poo","big one"];
+
+    var tweetString = "";
+
+    for (i=0;i<tweets.length;i++) {
+ 
+      tweetString = tweetString + "<p>" + tweets[i] + "</p>";      
+
+    }
+
+    document.getElementById("tweetDiv").innerHTML = tweetString;
+
+    for (i = 0; i < 5; i++) {
+
+      console.log(i);
+
+    }
+
+    for (i=5;i>0;i--) {
+
+      console.log(i);
+
+    }
+    
+  </script>
+
+</body>
+
+</html>

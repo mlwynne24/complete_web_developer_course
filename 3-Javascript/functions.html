@@ -1,0 +1,96 @@
+<head>
+
+  <title>Functions</title>
+  
+</head>
+
+<body>
+
+  <p>Enter your number between 1 and 5 here...</p>
+
+  <select id="myNumber">
+
+    <option>1</option>
+
+    <option>2</option>
+
+    <option>3</option>
+
+    <option>4</option>
+
+    <option>5</option>
+
+  </select>
+
+  <button id="button">Enter</button>
+
+  <p id="guesses"></p>
+  
+  <script type="text/javascript">
+
+  // average example  
+
+  function average(a,b) {
+
+      return ((a+b)/2);
+
+    }
+
+    var x = 2;
+
+    var y = 26;
+
+    alert(average(x,y));
+
+  // while loop fingers but with function
+
+  function doAGuess(correctAnswer) {
+
+    var guess = Math.floor(Math.random() * 5) + 1;
+      
+    console.log(guess);
+
+    if (guess==correctAnswer) {
+
+      return true;
+
+    } else {
+
+      return false;
+
+    }
+
+  }
+  
+  
+  document.getElementById("button").onclick = function() {
+
+    var numberOfGuesses = 1;
+
+    var gotIt = false;
+
+    var number = document.getElementById("myNumber").value;
+
+    while (gotIt == false) {
+
+      if (doAGuess(number) == true) {
+
+        document.getElementById("guesses").innerHTML = "Your number was " + number + "! I got your number in " + numberOfGuesses + " tries";
+        
+        gotIt=true;
+
+      } else {
+
+        numberOfGuesses++
+
+      }
+
+    }
+
+  }
+    
+  </script>
+
+</body>
+
+</html>

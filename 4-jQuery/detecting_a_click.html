@@ -1,0 +1,72 @@
+<html>
+
+  <head>
+
+    <title>Detecting a Click</title>
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+
+      #greenCircle {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: green;
+        margin: 10px;
+
+
+      }
+
+      .redSquare {
+
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+
+      }
+    
+    
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="greenCircle"></div>
+
+    <div class="redSquare"></div>
+
+    <div class="redSquare"></div>
+
+    <script type="text/javascript">
+    
+      $("#greenCircle").click(function() {
+
+        alert("circle was clicked");
+
+      }) //select circle.when clicked.do function.
+
+      $(".redSquare").click(function() {
+
+        alert("A square was clicked");
+
+      }) //same as above but either square as class selected.
+
+      $("div").click(function() {
+
+        alert("A div was clicked");
+
+      }) //same as above but can select types of things.
+
+
+
+
+    </script>
+
+  </body>
+
+</html>

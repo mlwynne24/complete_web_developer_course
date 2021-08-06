@@ -1,0 +1,91 @@
+<html>
+
+  <head>
+
+    <title>Introducing jQuery UI</title>
+
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+
+    <style type="text/css">
+    
+    #draggable { 
+      
+      width: 150px;
+      height: 150px;
+      padding: 0.5em;
+      float: left;
+      border: 1px solid black;
+      cursor: n-resize;
+    
+    }
+
+    #container {
+
+      width: 400px;
+      height: 400px;
+      background-color: grey;
+
+    }
+
+    .resizable {
+
+      width: 150px;
+      height: 150px;
+      background-color: green;
+      position: relative;
+      top: 50px;
+      margin-top: 10px;
+
+    }
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <div id="container">
+    
+      <div id="draggable" class="ui-widget-content">Drag me! I'm contained and can only go horizontally</div>
+
+    </div>
+
+    <div class="resizable" id="resizable1">I am restrained using grid</div>
+
+    <div class="resizable" id="resizable2"></div>
+
+
+    <script type="text/javascript">
+
+          
+        $("#draggable").draggable({ axis: "x" , containment: "parent"}); // drage within parent container only horizontally.
+
+        $("#resizable1").resizable({
+          
+          grid: 50, // expand in increments of 50px
+          alsoResize: "#resizable2", // also resize #resizable2
+          resize: function( event, ui ) {
+
+            if ($("#resizable1").width() > 300) { //callback function that when width of resizable1 == 300px do something.
+
+              alert("big enough");
+
+            }
+
+          }
+
+        });
+
+        $("#resizable2").resizable();
+
+
+    </script>
+
+  </body>
+
+</html>

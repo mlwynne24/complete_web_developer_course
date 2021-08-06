@@ -1,0 +1,66 @@
+<html>
+
+  <head>
+
+    <title>Introducing jQuery UI</title>
+
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+
+    <style type="text/css">
+    
+      #small {
+
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        float: left;
+        z-index: 1;
+
+      }
+
+      #large {
+
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        float: left;
+        position: relative;
+        left: 100px;
+
+      }
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <div id="small"></div>
+
+    <div id="large"></div>
+
+
+    <script type="text/javascript">
+
+      $("#small").draggable();
+        
+      $("#large").droppable({
+
+        drop: function(event,ui) {
+
+          alert("dropped!");
+
+        }
+
+      })
+
+    </script>
+
+  </body>
+
+</html>

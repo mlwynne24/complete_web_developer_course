@@ -1,0 +1,47 @@
+<html>
+
+  <head>
+
+    <title>Responding to a Click</title>
+
+  </head>
+
+  <body>
+
+    <p id="text">Hello World!</p>
+
+    <button id="my-button">Change text</button>
+
+    <p id="second-paragraph">Javascript is </p>
+
+    <button id="second-button">Append text</button>
+
+    <p id="third-paragraph"></p>
+
+    <button id="third-button">Appear text</button>
+
+    <script type="text/javascript">
+
+      document.getElementById("my-button").onclick = function() {
+
+        document.getElementById("text").innerHTML = "Hello Morgan";
+
+      }
+
+      document.getElementById("second-button").onclick = function() {
+
+        document.getElementById("second-paragraph").innerHTML = "I think " + document.getElementById("second-paragraph").innerHTML + "AWESOME!";
+      }
+
+
+      document.getElementById("third-button").onclick = function() {
+
+        document.getElementById("third-paragraph").innerHTML = document.getElementById("third-paragraph").innerHTML + "Poo, I have lots to learn!";
+
+      }
+    
+    </script>
+
+  </body>
+
+</html>

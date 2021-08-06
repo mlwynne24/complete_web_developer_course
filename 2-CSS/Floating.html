@@ -1,0 +1,60 @@
+<html>
+
+  <head>
+
+    <title>Floating</title>
+
+    <style type="text/css">
+    
+      #first-section {
+
+        color: blue;
+        background-color: green;
+        width: 200px;
+        float: left;
+
+      }
+
+      #second-section {
+
+        background-color: pink;
+        width: 200px;
+        float:right;
+
+      }
+
+      .clear-float {
+
+        clear:both;
+
+      }
+
+    </style>
+    
+  </head>
+    
+  <body>
+
+    <div id="first-section">
+
+      <p>Float:left removes HTML margin</p>
+
+      <p>Wow, I love internal CSS!</p>
+
+    </div>
+
+    <div id="second-section">
+
+      <p id="green">This is some more text. <span class="underlined">and this text is underlined.</span></p>
+
+      <h1 class="red">CSS is cool!</h1>
+
+    </div>
+
+    <div class="clear-float"> </div>
+
+    <p>This paragraph is not floated</p>
+
+  </body>
+
+</html>

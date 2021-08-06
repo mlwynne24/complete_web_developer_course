@@ -1,0 +1,87 @@
+<html>
+
+  <head>
+
+    <title>positioning</title>
+
+    <style type="text/css">
+    
+      #first-section {
+
+        color: blue;
+        background-color: green;
+        width: 200px;
+        position: relative;
+        left: 70px;
+        top: 100px;
+        z-index: 1;
+
+      }
+
+      #second-section {
+
+        background-color: pink;
+        width: 200px;
+        position: relative;
+        left: 100px;
+        z-index: 2;
+        opacity: 0.5
+
+      }
+
+      #third-section {
+
+        background-color: pink;
+        width: 200px;
+        position:absolute;
+        height: 5000px;
+
+      }
+
+      #fourth-section {
+
+        position:fixed;
+        width: 200px;
+        background-color: red;
+
+      }
+
+    </style>
+    
+  </head>
+    
+  <body>
+
+    <div id="first-section">
+
+      <p>Use left or top positioning with relative and positive or minus to move about</p>
+
+      <p>Opacity 0 is less than x is less than 1.</p>
+
+    </div>
+
+    <div id="second-section">
+
+      <p id="green">This is some more text. <span class="underlined">and this text is underlined.</span></p>
+
+      <h1 class="red">CSS is cool!</h1>
+
+    </div>
+
+    <p>z-index - higher z-index goes in front</p>
+
+    <div id="third-section">
+
+      <p>Absolute positioning example div - takes positioning defaults out of the page. Good for putting stuff on top of stuff. TAKES OUT OF FLOW OF THE PAGE. Use top and left to move relative to TOP LEFT OF PAGE.</p>
+
+    </div>
+
+    <div id="fourth-section">
+
+      <p>Fixed positioning example - OUT OF FLOW OF PAGE but how different to absolute: scroll to see effect. Good for menus.</p>
+
+    </div>
+
+  </body>
+
+</html>

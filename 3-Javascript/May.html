@@ -1,0 +1,37 @@
+<html>
+
+  <head>
+
+    <title>May</title>
+
+  </head>
+
+  <body>
+
+    <p id="text"></p>
+
+    <button id="my-button">Click to discover how I feel about you</button>
+
+    <p id="texttwo">I love you</p>
+
+    <button id="buttontwo">Click multiple times to find out more...</button>
+
+    <script type="text/javascript">
+
+      document.getElementById("my-button").onclick = function() {
+
+        document.getElementById("text").innerHTML = "I love you so so much, sorry about the pancetta ;-)";
+
+      }
+
+      document.getElementById("buttontwo").onclick = function() {
+
+        document.getElementById("texttwo").innerHTML = document.getElementById("texttwo").innerHTML + " lots and lots and";
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
